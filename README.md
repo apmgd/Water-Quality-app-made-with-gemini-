@@ -2,7 +2,7 @@
 
 A minimalist, high-contrast water quality tracker for San Diego beaches. This application aggregates data from the San Diego County Department of Environmental Health and Quality (DEHQ) and uses Google Gemini AI to analyze safety trends.
 
-![SD Water Watch App](screenshot.png)
+<img src="screenshot.png" alt="SD Water Watch App" style="border: 2px solid black; width: 100%;" />
 
 ## Features
 
