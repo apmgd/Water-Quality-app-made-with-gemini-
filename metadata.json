@@ -1,0 +1,5 @@
+{
+  "name": "SD Water Watch",
+  "description": "Minimalist water quality tracker for San Diego beaches using Gemini for trend analysis.",
+  "requestFramePermissions": []
+}
