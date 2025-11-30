@@ -52,32 +52,47 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-black p-4 md:p-8 lg:p-12 relative overflow-hidden">
       
-      {/* Header */}
-      <header className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end border-b-4 border-black pb-6 gap-6">
-        <div>
-          <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">
-            SD Water<br/>Watch
-          </h1>
+      {/* Header with Wave Background */}
+      <header className="relative mb-12 border-b-4 border-black overflow-hidden bg-black group">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/header-wave.jpg" 
+            alt="Ocean Wave" 
+            className="w-full h-full object-cover brightness-50 contrast-125 group-hover:scale-105 transition-transform duration-1000"
+          />
         </div>
-        
-        {/* Navigation Tabs */}
-        <div className="flex gap-2 w-full md:w-auto">
-          <button 
-            onClick={() => setActiveTab('monitor')}
-            className={`flex-1 md:flex-none px-6 py-3 font-bold uppercase tracking-wider text-sm transition-colors border border-black ${
-              activeTab === 'monitor' ? 'bg-black text-white' : 'bg-white text-black hover:bg-neutral-100'
-            }`}
-          >
-             <span className="flex items-center justify-center gap-2"><LayoutList className="w-4 h-4"/> Live Monitor</span>
-          </button>
-          <button 
-            onClick={() => setActiveTab('info')}
-            className={`flex-1 md:flex-none px-6 py-3 font-bold uppercase tracking-wider text-sm transition-colors border border-black ${
-              activeTab === 'info' ? 'bg-black text-white' : 'bg-white text-black hover:bg-neutral-100'
-            }`}
-          >
-            <span className="flex items-center justify-center gap-2"><Info className="w-4 h-4"/> Data & Info</span>
-          </button>
+
+        <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 p-6 md:p-10 pt-16 md:pt-24">
+          <div>
+            <h1 className="text-white text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8] drop-shadow-xl">
+              SD Water<br/>Watch
+            </h1>
+          </div>
+          
+          {/* Navigation Tabs */}
+          <div className="flex gap-2 w-full md:w-auto">
+            <button 
+              onClick={() => setActiveTab('monitor')}
+              className={`flex-1 md:flex-none px-6 py-3 font-bold uppercase tracking-wider text-sm transition-all border border-transparent ${
+                activeTab === 'monitor' 
+                  ? 'bg-white text-black shadow-lg' 
+                  : 'bg-black/40 text-white backdrop-blur-md hover:bg-black/60 border-white/20'
+              }`}
+            >
+               <span className="flex items-center justify-center gap-2"><LayoutList className="w-4 h-4"/> Live Monitor</span>
+            </button>
+            <button 
+              onClick={() => setActiveTab('info')}
+              className={`flex-1 md:flex-none px-6 py-3 font-bold uppercase tracking-wider text-sm transition-all border border-transparent ${
+                activeTab === 'info' 
+                  ? 'bg-white text-black shadow-lg' 
+                  : 'bg-black/40 text-white backdrop-blur-md hover:bg-black/60 border-white/20'
+              }`}
+            >
+              <span className="flex items-center justify-center gap-2"><Info className="w-4 h-4"/> Data & Info</span>
+            </button>
+          </div>
         </div>
       </header>
 
