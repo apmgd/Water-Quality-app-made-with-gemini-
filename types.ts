@@ -1,3 +1,4 @@
+
 export enum StatusLevel {
   SAFE = 'SAFE',
   WARNING = 'WARNING',
@@ -16,6 +17,7 @@ export interface BeachGroup {
   region: string; // e.g., "South Bay", "Central", "North County"
   currentStatus: StatusLevel;
   lastUpdated: string;
+  reason?: string; // Specific reason for closure/advisory (e.g., "Sewage Impact")
   history: WaterDataPoint[];
   latitude: number;
   longitude: number;
